@@ -1,10 +1,6 @@
-import uvicorn
 import models, database
-import redis.asyncio as redis
 from sqlalchemy.orm import Session
-from fastapi_limiter import FastAPILimiter
 from database import engine
-from fastapi_limiter.depends import RateLimiter
 from routers.url_router import router as url_router
 from routers.home_router import router as home_router
 from routers.login_router import router as login_router
@@ -16,7 +12,7 @@ from routers.redirect_router import router as redirect_router
 from starlette.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from fastapi import HTTPException as StarletteHTTPException
-from fastapi import FastAPI, Request, HTTPException, Depends, status
+from fastapi import FastAPI, Request, status
 
 
 
