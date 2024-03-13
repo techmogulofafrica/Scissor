@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for ('static', path='/url/css/sign_up.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for ('static', path='/url/Images/fav-icon.png')}}">
+    <title>Scissor</title>
+</head>
+
+<body>
+
+    <div class="hero-section">
+        <div class="navigation-bar">
+            <div class="logo">
+                <a href="/">
+                    <img src="{{ url_for ('static', path='/url/Images/Logo.png')}}" alt="Logo">
+                </a>
+            </div>
+            <div class="navigation-bar-2">
+                <ul>
+                    <li><a href="/url/my_urls">My URLs</a></li>
+                    <li><a href="/qrcode/qr">My QRCode</a></li>
+                    <li><a href="/url/create">Shorten URL</a></Code></li>
+                </ul>
+            </div>
+            <div class="navigation-bar-3">
+                <ul>
+                    <li class="navigation-bar-3-log-in"><a href="/auth/login">Log In</a></li>
+                    <li class="navigation-bar-3-button"><a href="/auth/signup">Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <main>
+        <!-- LOG IN SECTION -->
+        <div class="form">
+            <div>
+                <h1>Create your account</h1>
+                <p>Already have an account? <a href="/auth/login">Login</a></p>
+            </div>
+
+            {% if msg %}
+            <div class="danger-msg">
+                {{ msg }}
+            </div>
+            {% endif %}
+
+            <form action="/auth/signup" method="post">
+                <div class="signup-form-1">
+
+                    <input type="text" name="first_name" placeholder="First Name"  required>
+                    <input type="text" name="last_name" placeholder="Last Name"  required>
+                    <input type="text" name="username" placeholder="username" autocomplete="off" required>
+                    <input type="email" name="email" placeholder="Email Address" required>
+                    <input type="password" name="password" placeholder="Password" id="password_input" minlength="6" autocomplete="off" required>
+                    <input type="password" name="password2" placeholder="Re-enter Password" minlength="6" autocomplete="off" required>
+
+                </div>
+                <div class="signup-form-2">
+                    <input type="checkbox" onclick="myFunction()">
+                   <p>Show Password</p>
+               </div>
+                <div class="signup-form-3">
+                    <input type="submit" name="submit" value="Sign up">
+                </div>
+            </form>
+        </div>
+
+
+        <script>
+            function myFunction() {
+                var x = document.getElementById("password_input");
+                if (x.type === "password") {
+                    x.type = "text";
+                } else {
+                    x.type = "password";
+                }
+              
+            }
+
+        </script>
+    </main>
+</body>

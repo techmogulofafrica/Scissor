@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for ('static', path='/url/css/edit_url.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for ('static', path='/url/Images/fav-icon.png')}}">
+    <title>Scissor</title>
+</head>
+
+<body>
+
+    <main>
+        <!-- USER DASHBOARD -->
+        <div class="user-dashboard">
+            <!-- USER DASHBOARD LEFT -->
+            <div class="user-dashboard-left">
+                <ul>
+                    <li><a href="/"><img src="{{ url_for ('static', path='/url/Images/Logo.png')}}" alt="Logo"
+                                class="logo"></a></li>
+                    <li><a href="/dashboard/user">Home</a></li>
+                    <li> <a href="/url/create">Create new</a></li>
+                    <li><a href="/url/my_urls">Links</a></li>
+                    <li><a href="/qrcode/qr">QR Codes</a></li>
+                    <li><a href="/auth/logout">Logout</a></li>
+                </ul>
+            </div>
+            <!-- USER DASHBOARD RIGHT -->
+            <div class="user-dashboard-right">
+
+
+                <form method="post">
+                    <div class="user-dashboard-edit">
+                        <h1>
+                            <span>Edit URL</span>
+                        </h1>
+
+                        {% if msg %}
+                        <div class="danger-msg">
+                            {{ msg }}
+                        </div>
+                        {% endif %}
+
+                        <!-- FORM SECTION 1 -->
+                        <div class="edit_url_1">
+                            <h3>Destination</h3>
+                            <input type="url" name="original_url" placeholder="https://example.com/my-long-url"
+                                value="{{url.original_url}}" autocomplete="off" readonly required>
+                            <h3>Title (optional)</h3>
+                            <input type="text" name="title" placeholder="Enter a title" value="{{url.title}}"
+                                autocomplete="off" required>
+
+
+
+                            <!-- FORM SECTION 2 -->
+                            <h2> Ways to share </h2>
+                            <div class="custom-url-form">
+                                <div>
+                                    <h3>Domain</h3>
+                                    <input list="domain" placeholder="http://127.0.0.1:8000" autocomplete="off" readonly required>
+                                    <datalist id="domain">
+                                        <option value="http://127.0.0.1:8000">
+                                    </datalist>
+                                </div>
+                                <div class="custom-url-form-slash">
+                                    <h3>/</h3>
+                                </div>
+                                <div>
+                                    <h3>Custom back-half (optional)</h3>
+                                    <input {% if url.custom_alias=='None' %} value="" {% endif %} {% if url.custom_alias
+                                        %} value="{{url.custom_alias}}" {% endif %} name="custom_alias" type="text"
+                                        autocomplete="off" readonly required>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- CREATE BUTTON -->
+                        <div class="edit_url_2">
+                            <input type="submit" name="submit" value="Update">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
+
+    </main>

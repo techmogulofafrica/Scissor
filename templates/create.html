@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for ('static', path='/url/css/create_url.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for ('static', path='/url/Images/fav-icon.png')}}">
+    <title>Scissor</title>
+</head>
+
+<body>
+
+    <main>
+        <!-- USER DASHBOARD -->
+        <div class="user-dashboard">
+
+            <!-- USER DASHBOARD LEFT -->
+            <div class="user-dashboard-left">
+                <ul>
+                    <li><a href="/"><img src="{{ url_for ('static', path='/url/Images/Logo.png')}}" alt="Marker"
+                                class="logo"></a></li>
+                    <li><a href="/dashboard/user">Home</a></li>
+                    <li> <a href="/url/create">Create new</a></li>
+                    <li><a href="/url/my_urls">Links</a></li>
+                    <li><a href="/qrcode/qr">QR Codes</a></li>
+                    <li><a href="/auth/logout">Logout</a></li>
+                </ul>
+            </div>
+
+            <!-- USER DASHBOARD RIGHT -->
+            <div class="user-dashboard-right">
+                <form action="/url/create" method="post">
+                    <div class="user-dashboard-create">
+                        <h1>
+                            <span>Create new</span>
+                        </h1>
+                        <!-- FORM SECTION 1 -->
+                        <div class="create_url_1">
+                            <div>
+                                <h3>Destination</h3>
+                                <input type="url" name="original_url" placeholder="https://example.com/my-long-url"
+                                    autocomplete="off" required>
+                            </div>
+                            <div>
+                                <h3>Title</h3>
+                                <input type="text" name="title" placeholder="Enter a title" autocomplete="off" required>
+                            </div>
+                        </div>
+
+
+                        <!-- FORM SECTION 2 -->
+
+                        <div class="create_url_2" >
+                            <h2> Ways to share </h2>
+                            <div class="custom-url-form">
+                                <div>
+                                    <h3>Domain</h3>
+                                    <input list="domain" placeholder="http://127.0.0.1:8000" autocomplete="off">
+                                    <datalist id="domain">
+                                        <option value="http://127.0.0.1:8000">
+                                    </datalist>
+                                </div>
+                                <div class="custom-url-form-slash">
+                                    <h3>/</h3>
+                                </div>
+                                <div>
+                                    <h3>Custom back-half (optional)</h3>
+                                    <input type="text" name="custom_alias" autocomplete="off">
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- CREATE BUTTON -->
+                        <div class="submit-button">
+                            <input type="submit" name="submit" value="Create">
+                        </div>
+                    </div>
+            </div>
+            </form>
+        </div>
+        </div>
+    </main>
+</body>

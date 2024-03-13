@@ -1,0 +1,155 @@
+body {
+    margin: auto;
+    max-width: 1440px;
+    font-family: arial;
+    font-size: 16px;
+    background-image: url('/static/url/Images/bg-aurora.svg'),
+        url('/static/url/Images/bg-aurora-1.svg'),
+        url('/static/url/Images/bg-aurora-2.svg');
+    background-position: right top, center top, left top, 400px 620px;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #005AE2;
+}
+
+
+.hero-section {
+    max-width: 1440px;
+}
+
+.navigation-bar {
+    margin: auto;
+    position: relative;
+    top: 12px;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1150px;
+    height: 44px;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    max-width: 155px;
+    height: 40px;
+    padding: 8px;
+}
+
+
+.logo img {
+    max-width: 155px;
+}
+
+
+.navigation-bar-2 ul {
+    max-width: 504px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.navigation-bar-2 li {
+    padding: 0px 16px;
+}
+
+.navigation-bar-3 ul {
+    max-width: 211px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    gap: 10px;
+}
+
+.navigation-bar-3-log-in {
+    max-width: 45px;
+    height: 20px;
+}
+
+.navigation-bar-3-button {
+    box-sizing: border-box;
+    background-color: rgba(0, 101, 254, 1);
+    color: white;
+    border-radius: 100px;
+    padding: 12px 24px 12px 24px;
+    width: 142px;
+    height: 40px;
+    margin-block-start: -12px;
+    text-align: center;
+}
+
+.navigation-bar-3-button a {
+    color: white;
+}
+
+.form {
+    width: 480px;
+    height: px;
+    margin: auto;
+    margin-top: 96px;
+}
+
+.form h1 {
+    margin-bottom: -10px;
+}
+
+.signup-form-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 80px;
+}
+
+.signup-form-1 input {
+    display: flex;
+    flex-direction: column;
+    margin-top: 16px;
+    padding: 15px;
+    border-radius: 20px;
+    background-color: rgba(0, 101, 254, 0);
+}
+
+
+.signup-form-2 {
+    margin-top: 320px;
+}
+
+.signup-form-2 input {
+    display: inline;
+}
+
+.signup-form-2 p {
+    display: inline;
+    margin: 0;
+    font-size: 14px;
+}
+
+.signup-form-3 {
+    margin-top: 32px;
+}
+
+
+.signup-form-3 input {
+    padding: 15px 48px;
+    border-radius: 20px;
+    background-color: rgba(0, 101, 254, 1);
+    color: white;
+    border: 0;
+}
+
+.danger-msg {
+    background-color: red;
+    padding: 16px 16px;
+    color: white;
+    margin: auto;
+    border-radius: 20px;
+}

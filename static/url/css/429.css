@@ -1,0 +1,60 @@
+body {
+    margin: auto;
+    max-width: 1440px;
+    font-family: arial;
+    font-size: 16px;
+    background-image: url('/static/url/Images/bg-aurora.svg'),
+        url('/static/url/Images/bg-aurora-1.svg'),
+        url('/static/url/Images/bg-aurora-2.svg');
+    background-position: right top, center top, left top, 400px 620px;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+.error {
+    margin: auto;
+    margin-top: 240px;
+    text-align: center;
+
+}
+
+.error h1 {
+    font-size: 200px;
+    margin: -32px 0px;
+}
+
+.error h2 {
+    margin: -16px;
+    font-size: 40px;
+}
+
+.error h3 {
+    font-weight: 100;
+}
+
+.error a {
+    margin: auto;
+    max-width: 200px;
+    /* display: inline-block; */
+    padding: 15px 40px;
+    border-radius: 20px;
+    margin: 32px 0px;
+    background-color: rgba(0, 101, 254, 1);
+    color: white;
+    border: 0;
+}
+
+
+.error-button {
+    margin-top: 16px;
+}

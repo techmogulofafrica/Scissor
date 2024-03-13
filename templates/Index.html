@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for ('static', path='/url/css/index.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for ('static', path='/url/Images/fav-icon.png')}}">
+    <title>Scissor</title>
+</head>
+
+<body>
+
+    <!-- HERO SECTION -->
+    <div class="hero-section">
+        <div class="navigation-bar">
+            <div class="logo">
+                <a href="/">
+                    <img src="{{ url_for ('static', path='/url/Images/Logo.png')}}" alt="Marker">
+                </a>
+            </div>
+            <div class="navigation-bar-2">
+                <ul>
+                    <li><a href="/url/my_urls">My URLs</a></li>
+                    <li><a href="/qrcode/qr">My QRCode</a></li>
+                    <li><a href="/url/create">Shorten URL</a></Code></li>
+                </ul>
+            </div>
+            <div class="navigation-bar-3">
+                <ul>
+                    <li class="navigation-bar-3-log-in"><a href="/auth/login">Log In</a></li>
+                    <li class="navigation-bar-3-button"><a href="/auth/signup">Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="hero-section-info">
+            <h1>
+                Optimize Your Online Experience with Our<br>Advanced <span>URL Shortening</span> Solution
+            </h1>
+            <img src="{{ url_for ('static', path='/url/Images/header-dash.png') }}" alt="Marker">
+            <p>
+                Personalize your shortened URLs to align with your brand identity. Utilize custom slugs,<br>branded
+                links,
+                and domain customization options to reinforce your brand presence and<br>enhance user engagement.
+            </p>
+            <div class="get-started">
+                <a href="/auth/signup">Get Started</a>
+            </div>
+        </div>
+    </div>
+    <!-- HERO SECTION -->
+
+</body>
+
+</html>

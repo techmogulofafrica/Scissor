@@ -1,0 +1,131 @@
+body {
+    margin: auto;
+    max-width: 1440px;
+    font-family: arial;
+    font-size: 16px;
+    background-image: url('/static/url/Images/bg-aurora.svg'),
+        url('/static/url/Images/bg-aurora-1.svg'),
+        url('/static/url/Images/bg-aurora-2.svg');
+    background-position: right top, center top, left top, 400px 620px;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+
+}
+
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #005AE2;
+}
+
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    max-width: 155px;
+    height: 40px;
+}
+
+.user-dashboard {
+    display: flex;
+    height: 100vh;
+}
+
+.user-dashboard-left {
+    border-right: 2px solid rgba(0, 101, 254, 1);
+    max-width: 240px;
+    padding-top: 32px;
+    padding-right: 32px;
+}
+
+.user-dashboard-left li {
+    margin-bottom: 48px;
+}
+
+.user-dashboard-right {
+    max-width: 700px;
+    margin: auto;
+    height: 100vh;
+    padding-left: 16px;
+}
+
+
+.user-dashboard-create h1 {
+    font-size: 40px;
+    display: block;
+    margin: 0px;
+    padding-top: 48px;
+    padding-bottom: 32px;
+    text-align: left;
+}
+
+.user-dashboard-create h1 span {
+    color: #005AE2;
+}
+
+.user-dashboard-create h3 {
+    margin: 0;
+    font-weight: 100;
+    padding-bottom: 8px;
+}
+
+
+.form h1 {
+    margin-bottom: -10px;
+}
+
+.create_url_1 {
+    display: block;
+    min-width: 500px;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: space-between;
+    height: 80px;
+}
+
+.create_url_1 input {
+    min-width: 500px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+    padding: 15px;
+    border-radius: 20px;
+    background-color: rgba(0, 101, 254, 0);
+}
+
+
+
+.create_url_2 {
+    margin-top: 140px;
+}
+
+.custom-url-form {
+    display: flex;
+    justify-content: space-between;
+}
+
+.custom-url-form-slash {
+    padding-top: 16px;
+    align-self: center;
+}
+
+.custom-url-form input {
+    min-width: 220px;
+    margin-bottom: 16px;
+    padding: 15px;
+    border-radius: 20px;
+    background-color: rgba(0, 101, 254, 0);
+}
+
+.submit-button input {
+    margin-top: 48px;
+    padding: 15px 48px;
+    border-radius: 20px;
+    background-color: rgba(0, 101, 254, 1);
+    color: white;
+    border: 0;
+}

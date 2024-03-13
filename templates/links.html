@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for ('static', path='/url/css/links.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for ('static', path='/url/Images/fav-icon.png')}}">
+    <title>Scissor</title>
+</head>
+
+
+<body>
+
+    <main>
+        <div class="user-dashboard">
+            <div class="user-dashboard-left">
+                <ul>
+                    <li><a href="/"><img src="{{ url_for ('static', path='/url/Images/Logo.png')}}" alt="Logo"
+                                class="logo"></a></li>
+                    <li><a href="/dashboard/user">Home</a></li>
+                    <li> <a href="/url/create">Create new</a></li>
+                    <li><a href="/url/my_urls">Links</a></li>
+                    <li><a href="/qrcode/qr">QR Codes</a></li>
+                    <li><a href="/auth/logout">Logout</a></li>
+                </ul>
+            </div>
+            <div class="user-dashboard-right">
+                <div class="full-link-container">
+                    <div class="links-header">
+                        <h1>
+                            <span>Links</span>
+                        </h1>
+                        <a href="/url/create">Click here to shorten url</a>
+                    </div>
+
+
+
+                    {% for url in urls %}
+                    <div class="single-link-info-container">
+                        <div class="single-link-info-container-left">
+
+                            <div class="single-link-info-container-left-top">
+                                <h3>{{ url.title }}</h3>
+
+                                {% if url.custom_alias %}
+                                <p><a href="http://127.0.0.1:8000/{{ url.custom_alias}}"
+                                    id="input">http://127.0.0.1:8000/{{ url.custom_alias}} </a></p>
+                                {% else %}
+                                <p><a href="http://127.0.0.1:8000/{{ url.short_url}}" id="Link">http://127.0.0.1:8000/{{
+                                        url.short_url }}</a></p>
+                                {% endif %}
+
+                                <p>{{ url.original_url }}</p>
+                            </div>
+                            <div class="single-link-info-container-left-bottom">
+                                <div class="single-link-date">
+                                    <img src="{{ url_for ('static', path='/url/Images/date-icon.png')}}" alt="calender">
+                                    <p>{{ url.date_time_created }}</p>
+                                    <p id="gfg"></p>
+                                </div>
+                                <div class="single-link-analytics">
+                                    <img src="{{ url_for ('static', path='/url/Images/eye-icon.png')}}" alt="analytics">
+                                    <p>{{ url.clicks }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single-link-info-container-right">
+                            <div class="single-link-info-container-right-items">
+                                <!-- <a>
+                                    Copy
+                                </a> -->
+                            </div>
+                            <div class="single-link-info-container-right-items">
+                                <a href='edit/{{url.id}}'>
+                                    Edit
+                                </a>
+                            </div>
+                            <div class="single-link-info-container-right-items">
+                                <a href='delete/{{url.id}}'>
+                                    Delete
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        </div>
+
+    </main>
+
+</body>
+
+</html>

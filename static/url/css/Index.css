@@ -1,0 +1,143 @@
+body {
+    margin: auto;
+    max-width: 1440px;
+    font-family: arial;
+    font-size: 16px;
+    background-image: url('/static/url/Images/bg-aurora.svg'),
+        url('/static/url/Images/bg-aurora-1.svg'),
+        url('/static/url/Images/bg-aurora-2.svg');
+    background-position: right top, center top, left top, 400px 620px;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #005AE2;
+}
+
+
+
+.hero-section {
+    max-width: 1440px;
+}
+
+
+.navigation-bar {
+    margin: auto;
+    position: relative;
+    top: 12px;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1150px;
+    height: 44px;
+}
+
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    max-width: 155px;
+    height: 40px;
+    padding: 8px;
+}
+
+.logo img {
+    max-width: 155px;
+}
+
+.navigation-bar-2 ul {
+    max-width: 504px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.navigation-bar-2 li {
+    padding: 0px 16px;
+}
+
+
+.navigation-bar-3 ul {
+    max-width: 211px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    gap: 10px;
+}
+
+.navigation-bar-3-log-in {
+    max-width: 45px;
+    height: 20px;
+}
+
+.navigation-bar-3-button {
+    box-sizing: border-box;
+    background-color: rgba(0, 101, 254, 1);
+    color: white;
+    border-radius: 100px;
+    padding: 12px 24px 12px 24px;
+    width: 142px;
+    height: 40px;
+    margin-block-start: -12px;
+    text-align: center;
+}
+
+.navigation-bar-3-button a {
+    color: white;
+}
+
+.hero-section-info {
+    max-width: 948px;
+    height: 389px;
+    margin: auto;
+    margin-top: 150px;
+    text-align: center;
+}
+
+.hero-section-info h1 {
+    margin: 0;
+    max-width: 948px;
+    font-size: 45px;
+    line-height: 1.5;
+}
+
+.hero-section-info h1 span {
+    color: #005AE2;
+}
+
+.hero-section-info img {
+    width: 173px;
+    height: 19px;
+
+}
+
+.hero-section-info p {
+    /* width: 781px; */
+    text-align: center;
+    margin: auto;
+    font: 18px;
+    line-height: 20px;
+    margin-block: 20px;
+    color: #141414;
+}
+
+.get-started {
+    margin-top: 40px;
+}
+
+
+.get-started a {
+    margin: auto;
+    display: block;
+    padding: 15px 16px;
+    border-radius: 30px;
+    background-color: rgba(0, 101, 254, 1);
+    color: white;
+    width: 130px;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for ('static', path='/url/css/user_dashboard.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for ('static', path='/url/Images/fav-icon.png')}}">
+    <title>Scissor</title>
+</head>
+
+<body>
+
+    <main>
+        <div class="user-dashboard">
+            <div class="user-dashboard-left">
+                <ul>
+                    <li><a href="/">
+                            <img src="{{ url_for ('static', path='/url/Images/Logo.png')}}" alt="Logo" class="logo">
+                        </a>
+                    </li>
+                    <li><a href="/dashboard/user">Home</a></li>
+                    <li> <a href="/url/create">Create new</a></li>
+                    <li><a href="/url/my_urls">Links</a></li>
+                    <li><a href="/qrcode/qr">QR Codes</a></li>
+                    <li><a href="/auth/logout">Logout</a></li>
+                </ul>
+            </div>
+            <div class="user-dashboard-right">
+                <div class="user-dashboard-home">
+                    <h1>
+                        Advanced <span>URL <br> Shortening</span> Solution
+                    </h1>
+                    <img src="{{ url_for ('static', path='/url/Images/user-dashboard.png')}}" alt="">
+                </div>
+            </div>
+        </div>
+
+    </main>
