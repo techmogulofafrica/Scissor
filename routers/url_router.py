@@ -121,7 +121,7 @@ async def index(request:Request, db: Session = Depends(get_db),
         url_model.title = title
         url_model.custom_alias = custom_alias
         url_model.owner_id = user.get("id")
-        url_model.qrcode = generateQR("http://127.0.0.1:8000" + "/" + custom_alias)
+        url_model.qrcode = generateQR("https://scissor-y0gc.onrender.com" + "/" + custom_alias)
 
     else: 
         short_url = generate_short_url()
@@ -138,7 +138,7 @@ async def index(request:Request, db: Session = Depends(get_db),
         url_model.title = title
         url_model.short_url = short_url
         url_model.owner_id = user.get("id")
-        url_model.qrcode = generateQR("http://127.0.0.1:8000" + "/" + short_url)
+        url_model.qrcode = generateQR("https://scissor-y0gc.onrender.com" + "/" + short_url)
 
     db.add(url_model)
     db.commit()
