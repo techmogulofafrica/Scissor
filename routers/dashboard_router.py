@@ -1,6 +1,5 @@
 import models, database
 from database import engine
-import redis.asyncio as redis
 from sqlalchemy.orm import Session
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates

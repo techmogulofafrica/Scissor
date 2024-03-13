@@ -1,5 +1,4 @@
 import models, database
-import redis.asyncio as redis
 from sqlalchemy.orm import Session
 from database import engine, get_db
 from schemas.url_schema import URLAnalytics
