@@ -20,9 +20,11 @@ from fastapi import FastAPI, Request, HTTPException, Depends, status
 
 
 
+app = FastAPI()
 
 
-app = FastAPI(dependencies=[Depends(RateLimiter(times=5, seconds=10))])
+# app = FastAPI(dependencies=[Depends(RateLimiter(times=5, seconds=10))])
+
 
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
@@ -43,17 +45,20 @@ app.include_router(router=dashboard_router, prefix="/dashboard", tags=["user"])
 app.include_router(router=redirect_router, prefix="", tags=["redirect"])
 
 
+
+
+
 # GLOBAL RATE LIMITING
-if RateLimiter(times=3, seconds=10) is True :
-        raise HTTPException(status_code = status.HTTP_429_TOO_MANY_REQUESTS)
+# if RateLimiter(times=3, seconds=10) is True :
+#         raise HTTPException(status_code = status.HTTP_429_TOO_MANY_REQUESTS)
 
-@app.on_event("startup")
-async def startup():
-    redis_connection = redis.from_url("redis://localhost", encoding="utf-8", decode_responses=True)
-    await FastAPILimiter.init(redis_connection)
+# @app.on_event("startup")
+# async def startup():
+#     redis_connection = redis.from_url("redis://localhost", encoding="utf-8", decode_responses=True)
+#     await FastAPILimiter.init(redis_connection)
 
-if __name__ == "__main__":
-    uvicorn.run("main:app", debug=True, reload=True)
+# if __name__ == "__main__":
+#     uvicorn.run("main:app", debug=True, reload=True)
 
 
 
