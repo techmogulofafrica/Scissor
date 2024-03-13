@@ -87,7 +87,8 @@ a {
 }
 
 .single-link-info-container-left {
-    max-width: 500px;
+    max-width: 600px;
+    overflow-x: hidden;
 }
 
 .single-link-info-container-left-top{
