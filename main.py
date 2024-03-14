@@ -12,15 +12,13 @@ from routers.redirect_router import router as redirect_router
 from starlette.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from fastapi import HTTPException as StarletteHTTPException
-from fastapi import FastAPI, Request, status
+from fastapi import FastAPI, Request
+from fastapi_simple_cache.backends.inmemory import InMemoryBackend
+from fastapi_simple_cache import FastAPISimpleCache
 
 
 
 app = FastAPI()
-
-
-# app = FastAPI(dependencies=[Depends(RateLimiter(times=5, seconds=10))])
-
 
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
@@ -42,19 +40,10 @@ app.include_router(router=redirect_router, prefix="", tags=["redirect"])
 
 
 
-
-
-# GLOBAL RATE LIMITING
-# if RateLimiter(times=3, seconds=10) is True :
-#         raise HTTPException(status_code = status.HTTP_429_TOO_MANY_REQUESTS)
-
-# @app.on_event("startup")
-# async def startup():
-#     redis_connection = redis.from_url("redis://localhost", encoding="utf-8", decode_responses=True)
-#     await FastAPILimiter.init(redis_connection)
-
-# if __name__ == "__main__":
-#     uvicorn.run("main:app", debug=True, reload=True)
+@app.on_event("startup")
+async def startup():
+    backend = InMemoryBackend()
+    FastAPISimpleCache.init(backend=backend)
 
 
 

@@ -5,6 +5,10 @@ from schemas.url_schema import URLAnalytics
 from starlette.responses import RedirectResponse
 from fastapi.templating import Jinja2Templates
 from fastapi import APIRouter, Depends, status, Request, status
+from fastapi_simple_rate_limiter import rate_limiter
+from fastapi_simple_cache.decorator import cache
+
+
 
 router = APIRouter()
 
@@ -17,6 +21,8 @@ templates=Jinja2Templates(directory="templates")
 
 # ROUTE TO REDIRECT SHORTENED URL TO ORIGINNAL URL
 @router.get("/{url}")
+@rate_limiter(limit=5, seconds=30)
+@cache(expire=86400) 
 async def redirect_url(request:Request, url = str,  db: Session = Depends(get_db)):
         
         url1 = db.query(models.URL).filter(models.URL.custom_alias == url).first()

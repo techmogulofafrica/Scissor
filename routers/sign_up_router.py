@@ -6,6 +6,8 @@ from database import engine, get_db
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from fastapi import APIRouter, Depends, Request, Form
+from fastapi_simple_rate_limiter import rate_limiter
+from fastapi_simple_cache.decorator import cache
 
 
 router = APIRouter()
@@ -18,6 +20,8 @@ templates=Jinja2Templates(directory="templates")
 
 # ROUTE TO GET SIGNUP PAGE 
 @router.get("/signup", response_class=HTMLResponse)
+@rate_limiter(limit=5, seconds=30)
+@cache(expire=86400) 
 async def home(request: Request):
 
     return templates.TemplateResponse(request=request, name="signup.html")
@@ -25,6 +29,7 @@ async def home(request: Request):
 
 # ROUTE TO CREATE SIGNUP
 @router.post("/signup", response_class=HTMLResponse)
+@rate_limiter(limit=5, seconds=30)
 async def create_user(request:Request, db: Session =  Depends(get_db),
                       email: str = Form(...), username: str = Form(...),
                         first_name: str = Form(...), last_name: str = Form(...), password: str = Form(...), password2: str = Form(...)):

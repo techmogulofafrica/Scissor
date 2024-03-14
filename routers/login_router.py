@@ -12,6 +12,8 @@ from token_file_Oauth2 import create_access_token
 from starlette.responses import RedirectResponse
 from fastapi.security import OAuth2PasswordRequestForm
 from fastapi import APIRouter, Request,  Depends, HTTPException, status, Response
+from fastapi_simple_rate_limiter import rate_limiter
+from fastapi_simple_cache.decorator import cache
 
 
 router = APIRouter()
@@ -54,6 +56,8 @@ async def login_for_access_token(response: Response,
 
 # ROUTE TO GET HTML PAGE FOR LOGIN
 @router.get("/login", response_class=HTMLResponse)
+@rate_limiter(limit=5, seconds=30)
+@cache(expire=86400) 
 async def loginpage(request: Request):
 
     return templates.TemplateResponse(request=request, name="login.html")
@@ -61,6 +65,7 @@ async def loginpage(request: Request):
 
 # ROUTE TO LOGIN USER
 @router.post("/login", response_class=HTMLResponse)
+@rate_limiter(limit=5, seconds=30)
 async def login(request:Request, db: Session = Depends(get_db)):
     
     try:
