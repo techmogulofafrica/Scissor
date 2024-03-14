@@ -24,6 +24,6 @@ templates=Jinja2Templates(directory="templates")
 @router.get("/", response_class=HTMLResponse)
 @rate_limiter(limit=5, seconds=30)
 @cache(expire=86400) 
-async def home(request: Request):
+async def home_FE(request: Request):
     
     return templates.TemplateResponse("home.html", {"request": request})

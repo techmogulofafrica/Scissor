@@ -22,7 +22,7 @@ templates=Jinja2Templates(directory="templates")
 @router.get("/qr", response_class=HTMLResponse)
 @rate_limiter(limit=5, seconds=30)
 @cache(expire=86400) 
-async def home(request: Request, db: Session = Depends(get_db)):
+async def get_all_qrcode_by_user(request: Request, db: Session = Depends(get_db)):
 
     user = await get_current_user(request)
     if user is None:

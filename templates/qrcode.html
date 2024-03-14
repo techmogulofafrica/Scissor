@@ -35,8 +35,8 @@
                         <a href="/url/create">Click here to generate QRCode</a>
                     </div>
 
-                    {% for url in urls %}
 
+                    {% for url in urls %}
                     <div class="single-qr-code-info-container">
                         <div class="single-qr-code-info-container-left">
                             <img src="{{url.qrcode}}" alt="qr code">
@@ -62,8 +62,7 @@
                                     <p>{{ url.date_time_created }}</p>
                                 </div>
                                 <div class="single-qr-code-analytics">
-                                    <img src="{{ url_for ('static', path='/url/Images/eye-icon.png')}}"
-                                        alt="analytics">
+                                    <img src="{{ url_for ('static', path='/url/Images/eye-icon.png')}}" alt="analytics">
                                     <p>{{ url.clicks }}</p>
                                 </div>
                             </div>
@@ -74,10 +73,7 @@
                             </div>
                         </div>
                     </div>
-
                     {% endfor %}
-
-
 
                 </div>
             </div>
@@ -85,3 +81,4 @@
         </div>
 
     </main>
+</body>

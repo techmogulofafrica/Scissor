@@ -29,14 +29,14 @@ session = Session(bind=engine)
 models.Base.metadata.create_all(bind=database.engine)
 
 
-app.include_router(router=home_router, prefix="", tags=["home"])
-app.include_router(router=url_router, prefix="/url", tags=["url"])
-app.include_router(router=login_router, prefix="/auth", tags=["auth"])
-app.include_router(router=qr_codes_router, prefix="/qrcode", tags=["auth"])
-app.include_router(router=sign_up_router, prefix="/auth", tags=["auth"])
-app.include_router(router=logout_router, prefix="/auth", tags=["auth"])
-app.include_router(router=dashboard_router, prefix="/dashboard", tags=["user"])
-app.include_router(router=redirect_router, prefix="", tags=["redirect"])
+app.include_router(router=home_router, prefix="", tags=["Home"])
+app.include_router(router=url_router, prefix="/url", tags=["Url"])
+app.include_router(router=login_router, prefix="/auth", tags=["Auth"])
+app.include_router(router=qr_codes_router, prefix="/qrcode", tags=["Auth"])
+app.include_router(router=sign_up_router, prefix="/auth", tags=["Auth"])
+app.include_router(router=logout_router, prefix="/auth", tags=["Auth"])
+app.include_router(router=dashboard_router, prefix="/dashboard", tags=["User"])
+app.include_router(router=redirect_router, prefix="", tags=["Redirect"])
 
 
 

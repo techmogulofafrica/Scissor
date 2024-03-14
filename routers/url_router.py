@@ -62,7 +62,7 @@ async def get_all_urls_by_user(request: Request, db: Session = Depends(get_db)):
 @router.get("/edit/{url_id}", response_class=HTMLResponse)
 @rate_limiter(limit=5, seconds=30)
 @cache(expire=86400) 
-async def home(request: Request, url_id= int, db: Session = Depends(get_db)):
+async def edit_url_FE(request: Request, url_id= int, db: Session = Depends(get_db)):
 
     user = await get_current_user(request)
     if user is None:
@@ -74,7 +74,8 @@ async def home(request: Request, url_id= int, db: Session = Depends(get_db)):
 
 # ROUTE TO EDIT URL
 @router.post("/edit/{url_id}",response_class=RedirectResponse)
-async def edit_url(request: Request, url_id:int, db: Session = Depends(get_db),
+@cache(expire=86400) 
+async def edit_url_BE(request: Request, url_id:int, db: Session = Depends(get_db),
                      title: str = Form(...), original_url: str = Form(...),
                             custom_alias: Optional[str] = Form(None)):
     
@@ -103,7 +104,7 @@ async def edit_url(request: Request, url_id:int, db: Session = Depends(get_db),
 @router.get("/create", response_class=HTMLResponse)
 @rate_limiter(limit=5, seconds=30)
 @cache(expire=86400) 
-async def home(request: Request):
+async def create_url_FE(request: Request):
 
     user = await get_current_user(request)
     if user is None:
@@ -115,7 +116,8 @@ async def home(request: Request):
 # ROUTE TO CREATE URL
 @router.post("/create")
 @rate_limiter(limit=5, seconds=30)
-async def index(request:Request, db: Session = Depends(get_db),
+@cache(expire=86400) 
+async def create_url_BE(request:Request, db: Session = Depends(get_db),
                  title: Optional[str] = Form(None), original_url: str = Form(...),
                             custom_alias: Optional[str] = Form(None)):
                             
@@ -158,7 +160,8 @@ async def index(request:Request, db: Session = Depends(get_db),
 # ROUTE TO DELETE URL
 @router.get("/delete/{url_id}", response_class=HTMLResponse)
 @rate_limiter(limit=5, seconds=30)
-async def delete_todo(request:Request, url_id: int, db: Session = Depends(get_db)):
+@cache(expire=86400) 
+async def delete_url(request:Request, url_id: int, db: Session = Depends(get_db)):
     
     user = await get_current_user(request)
     if user is None:

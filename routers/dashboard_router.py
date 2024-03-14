@@ -23,7 +23,7 @@ templates=Jinja2Templates(directory="templates")
 @router.get("/user", response_class=HTMLResponse)
 @rate_limiter(limit=5, seconds=30)
 @cache(expire=86400) 
-async def home(request: Request):
+async def user_dashboard_FE(request: Request):
 
     user = await get_current_user(request)
     if user is None:
