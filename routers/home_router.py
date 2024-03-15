@@ -21,7 +21,7 @@ templates=Jinja2Templates(directory="templates")
 
 # ROUTE TO GET HTML HOME PAGE
 @router.get("/", response_class=HTMLResponse)
-@rate_limiter(limit=5, seconds=10)
+@rate_limiter(limit=10, seconds=10)
 @cache(expire=3600) 
 async def home_FE(request: Request):
     

@@ -20,8 +20,8 @@ templates=Jinja2Templates(directory="templates")
 
 # ROUTE USED TO LIST  ALL QRCODE BY USER
 @router.get("/qr", response_class=HTMLResponse)
-@rate_limiter(limit=5, seconds=10)
-@cache(expire=60) 
+@rate_limiter(limit=10, seconds=10)
+@cache(expire=10) 
 async def get_all_qrcode_by_user(request: Request, db: Session = Depends(get_db)):
 
     user = await get_current_user(request)

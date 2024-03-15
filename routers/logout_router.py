@@ -16,7 +16,7 @@ templates=Jinja2Templates(directory="templates")
 
 # ROUTE TO LOGOUT A USER
 @router.get("/logout", response_class=HTMLResponse)
-@rate_limiter(limit=5, seconds=10)
+@rate_limiter(limit=10, seconds=10)
 async def logout(request: Request):
 
     msg = "Logout successfully"

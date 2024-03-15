@@ -56,7 +56,7 @@ async def login_for_access_token(response: Response,
 
 # ROUTE TO GET HTML PAGE FOR LOGIN
 @router.get("/login", response_class=HTMLResponse)
-@rate_limiter(limit=5, seconds=10)
+@rate_limiter(limit=10, seconds=10)
 @cache(expire=3600) 
 async def login_FE(request: Request):
 
@@ -65,7 +65,6 @@ async def login_FE(request: Request):
 
 # ROUTE TO LOGIN USER
 @router.post("/login", response_class=HTMLResponse)
-@rate_limiter(limit=5, seconds=30)
 async def login(request:Request, db: Session = Depends(get_db)):
     
     try:

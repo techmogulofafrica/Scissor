@@ -21,7 +21,7 @@ templates=Jinja2Templates(directory="templates")
 
 # ROUTE TO GET HTML FOR  USER DASHBOARD
 @router.get("/user", response_class=HTMLResponse)
-@rate_limiter(limit=5, seconds=10)
+@rate_limiter(limit=10, seconds=10)
 @cache(expire=3600) 
 async def user_dashboard_FE(request: Request):
 
