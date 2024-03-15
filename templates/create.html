@@ -36,6 +36,9 @@
                         <h1>
                             <span>Create new</span>
                         </h1>
+
+                       
+
                         <!-- FORM SECTION 1 -->
                         <div class="create_url_1">
                             <div>
@@ -52,12 +55,13 @@
 
                         <!-- FORM SECTION 2 -->
 
-                        <div class="create_url_2" >
+                        <div class="create_url_2">
                             <h2> Ways to share </h2>
                             <div class="custom-url-form">
                                 <div>
                                     <h3>Domain</h3>
-                                    <input list="domain" placeholder="https://scissor-y0gc.onrender.com" autocomplete="off">
+                                    <input list="domain" placeholder="https://scissor-y0gc.onrender.com"
+                                        autocomplete="off">
                                     <datalist id="domain">
                                         <option value="https://scissor-y0gc.onrender.com">
                                     </datalist>
@@ -66,8 +70,15 @@
                                     <h3>/</h3>
                                 </div>
                                 <div>
-                                    <h3>Custom back-half (optional)</h3>
+                                    <h3>Custom alias (optional)</h3>
                                     <input type="text" name="custom_alias" autocomplete="off">
+                                    {% if msg %}
+                                    {% if msg == 'Custom alias exist' %}
+                                    <div class="danger-msg">
+                                        {{ msg }}
+                                    </div>
+                                    {% endif %}
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>

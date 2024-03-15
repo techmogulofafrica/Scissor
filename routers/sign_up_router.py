@@ -20,8 +20,8 @@ templates=Jinja2Templates(directory="templates")
 
 # ROUTE TO GET SIGNUP PAGE 
 @router.get("/signup", response_class=HTMLResponse)
-@rate_limiter(limit=5, seconds=30)
-@cache(expire=86400) 
+@rate_limiter(limit=5, seconds=10)
+@cache(expire=3600) 
 async def create_user_FE(request: Request):
 
     return templates.TemplateResponse(request=request, name="signup.html")
@@ -29,8 +29,6 @@ async def create_user_FE(request: Request):
 
 # ROUTE TO CREATE SIGNUP
 @router.post("/signup", response_class=HTMLResponse)
-@rate_limiter(limit=5, seconds=30)
-@cache(expire=86400) 
 async def create_user_BE(request:Request, db: Session =  Depends(get_db),
                       email: str = Form(...), username: str = Form(...),
                         first_name: str = Form(...), last_name: str = Form(...), password: str = Form(...), password2: str = Form(...)):

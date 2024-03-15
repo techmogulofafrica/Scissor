@@ -1,6 +1,6 @@
 import models, database
 from sqlalchemy.orm import Session
-from database import engine
+from database import engine, SessionLocal
 from routers.url_router import router as url_router
 from routers.home_router import router as home_router
 from routers.login_router import router as login_router
@@ -15,6 +15,7 @@ from fastapi import HTTPException as StarletteHTTPException
 from fastapi import FastAPI, Request
 from fastapi_simple_cache.backends.inmemory import InMemoryBackend
 from fastapi_simple_cache import FastAPISimpleCache
+from fastapi_simple_rate_limiter import rate_limiter
 
 
 

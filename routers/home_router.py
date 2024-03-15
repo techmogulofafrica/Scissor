@@ -5,7 +5,6 @@ from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from fastapi import APIRouter, Request
 from fastapi_simple_rate_limiter import rate_limiter
-from fastapi_simple_cache import FastAPISimpleCache
 from fastapi_simple_cache.decorator import cache
 
 
@@ -22,8 +21,8 @@ templates=Jinja2Templates(directory="templates")
 
 # ROUTE TO GET HTML HOME PAGE
 @router.get("/", response_class=HTMLResponse)
-@rate_limiter(limit=5, seconds=30)
-@cache(expire=86400) 
+@rate_limiter(limit=5, seconds=10)
+@cache(expire=3600) 
 async def home_FE(request: Request):
     
     return templates.TemplateResponse("home.html", {"request": request})

@@ -38,23 +38,15 @@ a {
     font-size: 40px;
 }
 
-.error h3 {
-    font-weight: 100;
-}
 
 .error a {
     margin: auto;
     max-width: 200px;
-    /* display: inline-block; */
+    display: inline-block;
     padding: 15px 40px;
     border-radius: 20px;
     margin: 32px 0px;
     background-color: rgba(0, 101, 254, 1);
     color: white;
     border: 0;
-}
-
-
-.error-button {
-    margin-top: 16px;
 }

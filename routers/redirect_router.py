@@ -21,8 +21,8 @@ templates=Jinja2Templates(directory="templates")
 
 # ROUTE TO REDIRECT SHORTENED URL TO ORIGINNAL URL
 @router.get("/{url}")
-@rate_limiter(limit=5, seconds=30)
-@cache(expire=86400) 
+@rate_limiter(limit=5, seconds=10)
+@cache(expire=3600) 
 async def redirect_url(request:Request, url = str,  db: Session = Depends(get_db)):
         
         url1 = db.query(models.URL).filter(models.URL.custom_alias == url).first()

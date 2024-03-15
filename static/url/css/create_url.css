@@ -129,3 +129,12 @@ a {
     color: white;
     border: 0;
 }
+
+
+.danger-msg {
+    background-color: red;
+    padding: 16px 16px;
+    color: white;
+    margin: auto;
+    border-radius: 20px;
+}

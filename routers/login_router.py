@@ -56,8 +56,8 @@ async def login_for_access_token(response: Response,
 
 # ROUTE TO GET HTML PAGE FOR LOGIN
 @router.get("/login", response_class=HTMLResponse)
-@rate_limiter(limit=5, seconds=30)
-@cache(expire=86400) 
+@rate_limiter(limit=5, seconds=10)
+@cache(expire=3600) 
 async def login_FE(request: Request):
 
     return templates.TemplateResponse(request=request, name="login.html")
