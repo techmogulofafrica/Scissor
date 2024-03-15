@@ -20,6 +20,7 @@ This project requires python 3.10+ and other requirements which could be install
 7. Open uvicorn localhost server to load project on browser
    
 ![Screenshot (45)](https://github.com/techmogulofafrica/Scissor/assets/103323232/6d6c057a-67b8-4407-893b-d5316cb89c3e)
-
+#
 API DOCUMENTATION - https://scissor-y0gc.onrender.com/docs
+
 LIVE PROJECT - https://scissor-y0gc.onrender.com/
