@@ -17,5 +17,6 @@ This project requires python 3.10+ and other requirements which could be install
 4. Activate virtual environment
 5. Install requiremnts for this project using "pip freeze > requirements.txt" (for windows machine)
 6. Start up uvicorn server using "uvicorn main:app --reload" .  virtual environment must be activated
-7. 
+7. Run uvicorn  localhost server to open project on browser
 
+![Screenshot (45)](https://github.com/techmogulofafrica/Scissor/assets/103323232/6d6c057a-67b8-4407-893b-d5316cb89c3e)
