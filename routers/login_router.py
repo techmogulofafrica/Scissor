@@ -65,7 +65,7 @@ async def login_FE(request: Request):
 
 # ROUTE TO LOGIN USER
 @router.post("/login", response_class=HTMLResponse)
-async def login(request:Request, db: Session = Depends(get_db)):
+async def login_BE(request:Request, db: Session = Depends(get_db)):
     
     try:
         form = LoginForm(request)
