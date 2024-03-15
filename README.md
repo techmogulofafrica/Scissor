@@ -24,3 +24,6 @@ This project requires python 3.10+ and other requirements which could be install
 API DOCUMENTATION - https://scissor-y0gc.onrender.com/docs
 
 LIVE PROJECT - https://scissor-y0gc.onrender.com/
+
+#
+Take not that *Rate Limiting* and *Caching* functionality is added to some specific routes
