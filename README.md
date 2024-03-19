@@ -15,7 +15,7 @@ This project requires python 3.10+ and other requirements which could be install
 2. Open using any IDE on local machine. Visual studio code preferably
 3. create new virtual environment file
 4. Activate virtual environment
-5. Install requiremnts for this project using "pip freeze > requirements.txt" (for windows machine)
+5. Install requiremnts for this project using "pip install -r requirements.txt" (for windows machine)
 6. Start up uvicorn server using "uvicorn main:app --reload" .  virtual environment must be activated
 7. Open uvicorn localhost server to load project on browser
    
